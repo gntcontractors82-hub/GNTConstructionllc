@@ -9,7 +9,7 @@
 import { useState } from "react";
 import { Menu, X, Phone, MapPin, Mail } from "lucide-react";
 
-const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663414461255/bYREEpJsYEFMWsv7TTLyLm/gnt-logo.webp";
+const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663414461255/bYREEpJsYEFMWsv7TTLyLm/gnt-logo_d4432229.webp";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
