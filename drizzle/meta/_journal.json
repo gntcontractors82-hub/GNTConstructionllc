@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1772996290676,
+      "tag": "0000_magical_kree",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1772996364933,
+      "tag": "0001_known_blackheart",
+      "breakpoints": true
+    }
+  ]
+}

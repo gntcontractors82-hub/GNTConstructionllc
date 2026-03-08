@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Wrench, Droplet, DoorOpen, Hammer, Zap, Fence, Star } from "lucide-react";
 import { useState } from "react";
+import { useAuth } from "@/_core/hooks/useAuth";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663414461255/bYREEpJsYEFMWsv7TTLyLm/gnt-hero-bg-ntTFdCS3zcbEqbdwRnUFPL.webp";
 const REMODELING_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663414461255/bYREEpJsYEFMWsv7TTLyLm/gnt-remodeling-kitchen-jxTgJYUG2CDQR7EfNVsiUH.webp";
@@ -89,6 +90,10 @@ const fiveStarReviews = [
 ];
 
 export default function Home() {
+  // The userAuth hooks provides authentication state
+  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
+  let { user, loading, error, isAuthenticated, logout } = useAuth();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
