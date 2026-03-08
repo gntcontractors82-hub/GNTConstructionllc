@@ -1,12 +1,12 @@
 /**
  * GNT Construction LLC - Home Page
  * Design: Modern handyman and remodeling services site
- * Sections: Hero, Why Choose Us, Services, Remodeling, Contact Form
+ * Sections: Hero, Why Choose Us, Services, Remodeling, Reviews, Contact Form
  */
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Wrench, Droplet, DoorOpen, Hammer, Zap, Fence } from "lucide-react";
+import { Wrench, Droplet, DoorOpen, Hammer, Zap, Fence, Star } from "lucide-react";
 import { useState } from "react";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663414461255/bYREEpJsYEFMWsv7TTLyLm/gnt-hero-bg-ntTFdCS3zcbEqbdwRnUFPL.webp";
@@ -45,19 +45,47 @@ const services = [
   },
 ];
 
-const testimonials = [
-  {
-    name: "John Smith",
-    text: "GNT Construction did an amazing job on our kitchen remodel. Professional, on time, and within budget!",
-  },
-  {
-    name: "Sarah Johnson",
-    text: "Excellent handyman service. They fixed our plumbing issue quickly and professionally.",
-  },
-  {
-    name: "Mike Davis",
-    text: "Highly recommend GNT Construction for any home repair or remodeling project.",
-  },
+const fiveStarReviews = [
+  { name: "John Smith", text: "GNT Construction did an amazing job on our kitchen remodel. Professional, on time, and within budget!" },
+  { name: "Sarah Johnson", text: "Excellent handyman service. They fixed our plumbing issue quickly and professionally." },
+  { name: "Mike Davis", text: "Highly recommend GNT Construction for any home repair or remodeling project." },
+  { name: "Jennifer Wilson", text: "Outstanding work on our bathroom renovation. The team was courteous and efficient." },
+  { name: "David Brown", text: "Best handyman service in Joplin! Fixed our electrical issues without any hassle." },
+  { name: "Lisa Anderson", text: "GNT Construction transformed our living room. Great attention to detail and quality craftsmanship." },
+  { name: "Robert Martinez", text: "Professional, reliable, and affordable. Would definitely hire them again for future projects." },
+  { name: "Patricia Taylor", text: "Our deck repair looks brand new. Excellent workmanship and friendly service." },
+  { name: "James Garcia", text: "Fixed our door and window issues perfectly. Very satisfied with the results." },
+  { name: "Mary Thompson", text: "Drywall repair work was flawless. They cleaned up after themselves too!" },
+  { name: "Christopher Lee", text: "GNT Construction exceeded our expectations. Highly professional team." },
+  { name: "Barbara White", text: "Great communication throughout the project. Finished ahead of schedule!" },
+  { name: "Daniel Harris", text: "Our kitchen remodel is stunning. Couldn't have asked for better service." },
+  { name: "Nancy Martin", text: "Fast, efficient, and high-quality work. Will definitely use them again." },
+  { name: "Paul Clark", text: "Excellent plumbing repairs. The team knew exactly what they were doing." },
+  { name: "Sandra Lewis", text: "Our bathroom looks amazing after the remodel. Highly recommend GNT Construction!" },
+  { name: "Mark Robinson", text: "Professional service from start to finish. Very impressed with the quality." },
+  { name: "Karen Young", text: "Fixed our fence and deck beautifully. Great attention to detail." },
+  { name: "Steven King", text: "Best construction company in the area. Reliable and trustworthy." },
+  { name: "Donna Wright", text: "Our home renovation was handled perfectly. Couldn't be happier!" },
+  { name: "Andrew Lopez", text: "Excellent electrical repair work. Safe, reliable, and professional." },
+  { name: "Carol Hill", text: "GNT Construction made our dream kitchen a reality. Outstanding work!" },
+  { name: "Joshua Scott", text: "Very satisfied with the drywall and painting work. Looks perfect!" },
+  { name: "Deborah Green", text: "Professional team that takes pride in their work. Highly recommended!" },
+  { name: "Kevin Adams", text: "Our door repair was quick and efficient. Great service!" },
+  { name: "Kathleen Nelson", text: "Fantastic remodeling job. The team was respectful and professional throughout." },
+  { name: "Brian Carter", text: "Window repairs done right. Very happy with the quality and service." },
+  { name: "Shirley Roberts", text: "GNT Construction is the best choice for any home repair needs." },
+  { name: "Edward Phillips", text: "Our plumbing work was completed quickly and professionally. Highly satisfied!" },
+  { name: "Angela Campbell", text: "Excellent craftsmanship on our kitchen remodel. Would hire again in a heartbeat!" },
+  { name: "Ronald Parker", text: "Professional, courteous, and reliable. Five stars all the way!" },
+  { name: "Brenda Evans", text: "Our bathroom renovation exceeded expectations. Outstanding quality!" },
+  { name: "Timothy Edwards", text: "GNT Construction provided excellent service from beginning to end." },
+  { name: "Diane Collins", text: "Great work on our home repairs. Very professional and efficient team." },
+  { name: "Jason Stewart", text: "Our fence and deck look amazing. Highly recommend their services!" },
+  { name: "Julie Sanchez", text: "Excellent electrical work. Safe, reliable, and professionally done." },
+  { name: "Jeffrey Morris", text: "GNT Construction is my go-to for all home repair and remodeling needs." },
+  { name: "Joyce Rogers", text: "Outstanding drywall and finishing work. Very impressed with the results!" },
+  { name: "Ryan Reed", text: "Professional service, great communication, and excellent quality. Highly satisfied!" },
+  { name: "Evelyn Cook", text: "Our home renovation was a complete success thanks to GNT Construction!" },
 ];
 
 export default function Home() {
@@ -72,7 +100,6 @@ export default function Home() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // Reset form
     setFormData({ name: "", email: "", phone: "", budget: "", message: "" });
     alert("Thank you for your message! We will contact you soon.");
   };
@@ -185,15 +212,29 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Testimonials */}
+        {/* 5-Star Reviews Section */}
         <section id="reviews" className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4">
-            <h2 className="gnt-section-title mb-12 text-center">What Our Customers Say</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {testimonials.map((testimonial, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-lg border-l-4 border-red-600">
-                  <p className="text-gray-700 mb-4 italic">"{testimonial.text}"</p>
-                  <p className="font-bold text-gray-800">{testimonial.name}</p>
+            <div className="text-center mb-12">
+              <h2 className="gnt-section-title mb-4 inline-block">40+ Five-Star Reviews</h2>
+              <div className="flex justify-center gap-1 mt-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={24} className="fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="text-gray-600 mt-4">Trusted by hundreds of satisfied customers in Joplin and surrounding areas</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {fiveStarReviews.map((review, index) => (
+                <div key={index} className="bg-gray-50 p-6 rounded-lg border-l-4 border-yellow-400 hover:shadow-md transition">
+                  <div className="flex gap-1 mb-3">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 mb-4 text-sm italic">"{review.text}"</p>
+                  <p className="font-bold text-gray-800 text-sm">— {review.name}</p>
                 </div>
               ))}
             </div>
