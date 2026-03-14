@@ -9,7 +9,7 @@
 import { useState } from "react";
 import { Menu, X, Phone, MapPin, Mail } from "lucide-react";
 
-const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663414461255/bYREEpJsYEFMWsv7TTLyLm/gnt-logo_d4432229.webp";
+const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663414461255/bYREEpJsYEFMWsv7TTLyLm/gnt-logo_2d431b58.webp";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -67,10 +67,10 @@ export default function Header() {
       {/* Navigation Bar */}
       <nav className="bg-gray-800 text-white sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center justify-between h-24">
+          <div className="flex items-center justify-between h-32">
             {/* Logo */}
             <div className="flex items-center">
-              <img src={LOGO_URL} alt="GNT Construction LLC" className="h-20 object-contain drop-shadow-lg" />
+              <img src={LOGO_URL} alt="GNT Construction LLC" className="h-28 object-contain drop-shadow-lg" />
             </div>
 
             {/* Desktop Navigation */}
