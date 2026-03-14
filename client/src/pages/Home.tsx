@@ -6,6 +6,10 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import TrustSignals from "@/components/TrustSignals";
+import BeforeAfterGallery from "@/components/BeforeAfterGallery";
+import FAQSection from "@/components/FAQSection";
+import QuoteForm from "@/components/QuoteForm";
 import { Wrench, Droplet, DoorOpen, Hammer, Zap, Fence, Star } from "lucide-react";
 import { useState } from "react";
 import { useAuth } from "@/_core/hooks/useAuth";
@@ -317,6 +321,17 @@ export default function Home() {
             </form>
           </div>
         </section>
+        {/* Trust Signals Section */}
+        <TrustSignals />
+
+        {/* Before/After Gallery */}
+        <BeforeAfterGallery />
+
+        {/* Quick Quote Form */}
+        <QuoteForm />
+
+        {/* FAQ Section */}
+        <FAQSection />
       </main>
 
       <Footer />
