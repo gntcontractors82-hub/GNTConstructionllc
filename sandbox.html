@@ -58,9 +58,6 @@
         .tag-pill-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; background: var(--bg-main); padding: 16px; border: 1px solid var(--border); border-radius: 6px; min-height: 60px; width: 100%; }
         .tag-pill { background: rgba(37,99,235,0.15); border: 1px solid var(--ghl-blue); color: #fff; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-family: monospace; font-weight: 600; }
         
-        .preview-box { background: var(--bg-main); border: 1px solid var(--border); border-radius: 20px; margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
-        .chat-bubble-preview { width: 55px; height: 55px; background: var(--ghl-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; align-self: flex-end; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-        
         .status-banner { padding: 14px; border-radius: 6px; font-size: 14px; font-weight: 600; margin-top: 20px; display: none; }
         .status-banner.success-mode { background: rgba(16,185,129,0.1); border: 1px solid var(--success); color: var(--success); }
     </style>
@@ -97,7 +94,7 @@
                 <div class="form-grid">
                     <div class="input-group">
                         <label>Sub-Account Business Name *</label>
-                        <input type="text" id="inputAccountNameGNT" placeholder="Ex: Bob Jones Dentistry CLM 08-25-26">
+                        <input type="text" id="inputAccountNameGNT" placeholder="Ex: Bob Jones Dentistry CLM">
                     </div>
                     <div class="input-group">
                         <label>Company Corporate Phone *</label>
@@ -110,7 +107,6 @@
                         <select id="inputHoursGNT">
                             <option value="empty">-- Configure Operating Schedule Rows --</option>
                             <option value="correct">Mon - Fri (9:00 AM - 6:30 PM)</option>
-                            <option value="wrong">Open 24/7 (Default Value Loop)</option>
                         </select>
                     </div>
                     <div class="input-group">
@@ -123,3 +119,10 @@
                         </select>
                     </div>
                 </div>
+                <button class="canvas-btn" onclick="saveProfileSettingsGNT()">Save Settings Profile</button>
+                <div class="status-banner success-mode" id="bannerProfileGNT">🎉 Milestone Cleared: Core business variables match target ticket parameters.</div>
+            </div>
+
+            <div class="app-view-panel" id="view-pipelines">
+                <div class="view-title">Pipelines &amp; Milestone Stages Grid</div>
+                <div class="input-group" style="margin-bottom: 16px;">
