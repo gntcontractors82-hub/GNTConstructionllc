@@ -1,0 +1,6 @@
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "https://gohighlevel.com"
+    Access-Control-Allow-Methods = "GET, HEAD, POST, OPTIONS"
+    Content-Security-Policy = "frame-ancestors 'self' https://gohighlevel.com https://*.gohighlevel.com"
