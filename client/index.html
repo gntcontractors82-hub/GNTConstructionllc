@@ -15,6 +15,7 @@
             --ghl-blue: #2563eb;
             --ghl-blue-hover: #1d4ed8;
             --success: #10b981;
+            --error: #ef4444;
             --warning: #f97316;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
@@ -28,7 +29,6 @@
         
         .main-wrapper { flex: 1; display: flex; flex-direction: column; height: 100%; overflow: hidden; }
         .top-proctor-bar { background: var(--bg-sidebar); border-bottom: 1px solid var(--border); padding: 20px; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; }
-        .timer-badge { font-family: monospace; font-size: 32px; font-weight: bold; color: var(--success); background: rgba(16,185,129,0.05); padding: 4px 16px; border-radius: 6px; border: 1px solid var(--success); }
         .master-btn { background: var(--ghl-blue); color: #fff; border: none; padding: 12px 28px; font-weight: 700; border-radius: 6px; cursor: pointer; font-size: 14px; box-shadow: 0 4px 14px rgba(37,99,235,0.3); transition: background 0.2s; }
         .master-btn:hover { background: var(--ghl-blue-hover); }
         
@@ -52,6 +52,9 @@
         
         .canvas-btn { background: var(--ghl-blue); color: white; border: none; padding: 12px 24px; font-size: 14px; font-weight: 700; border-radius: 6px; cursor: pointer; transition: background 0.2s; margin-top: 8px; width: fit-content; }
         .canvas-btn:hover { background: var(--ghl-blue-hover); }
+        
+        .node-canvas { background: #0c101b; border: 1px dashed var(--border); border-radius: 8px; min-height: 250px; display: flex; flex-direction: column; align-items: center; padding: 24px; background-image: radial-gradient(var(--border) 1px, transparent 0); background-size: 20px 20px; }
+        .empty-canvas-msg { color: var(--text-muted); font-style: italic; font-size: 14px; text-align: center; margin: auto; line-height: 1.6; }
         .status-banner { padding: 14px; border-radius: 6px; font-size: 14px; font-weight: 600; margin-top: 20px; display: none; background: rgba(16,185,129,0.1); border: 1px solid var(--success); color: var(--success); }
     </style>
 </head>
@@ -75,8 +78,7 @@
                 <h3 style="font-size: 16px;">Workspace Node Profile: <span id="currentWorkspaceNameGNT" style="color: var(--ghl-blue);">Unconfigured Shell</span></h3>
             </div>
             <div style="display: flex; align-items: center; gap: 16px;">
-                <div class="timer-badge" id="clockTimerGNT">45:00</div>
-                <button class="master-btn" id="initBtnGNT" onclick="initializeFreshExamRun()">Initialize Exam Sandbox</button>
+                <button class="master-btn" id="initBtnGNT" onclick="initializeFreshExamRun()">Initialize Scenario Matrix</button>
             </div>
         </div>
 
@@ -125,5 +127,3 @@
                     </div>
                     <div class="input-group" style="margin-bottom: 20px;">
                         <label>Stage Name Variable String Matrix (Comma Separated) *</label>
-                        <input type="text" id="inputStagesGNT" placeholder="New Lead, Nurture Active, Consultation Booked, No Show">
-                    </div>
