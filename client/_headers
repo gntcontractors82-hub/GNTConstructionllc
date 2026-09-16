@@ -1,0 +1,4 @@
+/*
+  Content-Security-Policy: frame-ancestors 'self' https://app.gohighlevel.com https://*.gohighlevel.com;
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, HEAD, POST, OPTIONS
